@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="col-sm-8 col-md-9">
 			<h4 class="text-weight-normal">Showing {{ data.posts.results.length}} post.</h4>
-			<div class="blog">
+			<div class="update">
 				{{# each data.posts.results}}
 				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
 					<h2><a href="{{postUrl slug}}">{{{title}}}</a></h2>
@@ -22,7 +22,7 @@
 		<div class="col-sm-4 col-md-3">
 			<h2>Categories</h2>
 			<div style="margin-top: 70px;" class="list-group">
-				<a href="/blog" class="active list-group-item">All Categories</a>
+				<a href="/update" class="active list-group-item">All Categories</a>
 				{{# each data.categories }}
 				<a href="{{categoryUrl key}}" class="false list-group-item">{{name}}</a>
 				{{/each}}

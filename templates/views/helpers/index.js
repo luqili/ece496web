@@ -86,7 +86,7 @@ module.exports = function () {
 	// Returns an html-string of the categories on the post.
 	// By default, categories are separated by commas.
 	// input. categories:['tech', 'js']
-	// output. 'Filed Undder <a href="blog/tech">tech</a>, <a href="blog/js">js</a>'
+	// output. 'Filed Undder <a href="update/tech">tech</a>, <a href="update/js">js</a>'
 
 	_helpers.categoryList = function (categories, options) {
 		var autolink = _.isString(options.hash.autolink) && options.hash.autolink === 'false' ? false : true;
@@ -101,7 +101,7 @@ module.exports = function () {
 			if (autolink) {
 				return _.map(tags, function (tag) {
 					return linkTemplate({
-						url: ('/blog/' + tag.key),
+						url: ('/update/' + tag.key),
 						text: _.escape(tag.name),
 					});
 				}).join(separator);
@@ -193,18 +193,18 @@ module.exports = function () {
 
 	// Direct url link to a specific post
 	_helpers.postUrl = function (postSlug, options) {
-		return ('/blog/post/' + postSlug);
+		return ('/update/post/' + postSlug);
 	};
 
 	// might be a ghost helper
-	// used for pagination urls on blog
+	// used for pagination urls on update
 	_helpers.pageUrl = function (pageNumber, options) {
-		return '/blog?page=' + pageNumber;
+		return '/update?page=' + pageNumber;
 	};
 
-	// create the category url for a blog-category page
+	// create the category url for a update-category page
 	_helpers.categoryUrl = function (categorySlug, options) {
-		return ('/blog/' + categorySlug);
+		return ('/update/' + categorySlug);
 	};
 
 	// ### Pagination Helpers
