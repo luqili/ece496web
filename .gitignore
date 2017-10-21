@@ -28,8 +28,6 @@ node_modules/*
 !node_modules/keystone/
 !node_modules/keystone-storage-namefunctions/
 !node_modules/keystone-utils/
-!node_modules/react-images/
-!node_modules/react-select/
 
 # Ignore .env configuration files
 .env
