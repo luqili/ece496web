@@ -6,10 +6,6 @@ require('dotenv').config();
 var keystone = require('keystone');
 var handlebars = require('express-handlebars');
 
-handlebars.registerHelper('trimString', function(passedString) {
-    var theString = passedString.substring(0,15);
-    return new handlebars.SafeString(theString)
-});
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
@@ -65,6 +61,9 @@ keystone.set('nav', {
 
 // Start Keystone to connect to your database and initialise the web server
 
-
+handlebars.registerHelper('trimString', function(passedString) {
+    var theString = passedString.substring(0,15);
+    return new handlebars.SafeString(theString)
+});
 
 keystone.start();
