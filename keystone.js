@@ -61,9 +61,6 @@ keystone.set('nav', {
 
 // Start Keystone to connect to your database and initialise the web server
 
-handlebars.registerHelper('trimString', function(passedString) {
-    var theString = passedString.substring(0,15);
-    return new handlebars.SafeString(theString)
-});
+
 
 keystone.start();
