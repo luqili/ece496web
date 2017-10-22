@@ -20,7 +20,7 @@ exports = module.exports = function (req, res) {
 		var q = keystone.list('Post').model.findOne({
 			state: 'published',
 			slug: locals.filters.post,
-		}).populate('author categories');
+		}).populate('author categories publishedDate');
 
 		q.exec(function (err, result) {
 			locals.data.post = result;

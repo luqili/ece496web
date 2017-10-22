@@ -8,7 +8,8 @@
 					<h1>{{data.post.title}}</h1>
 					<h5>
 						{{{categoryList data.post.categories prefix="Posted in "}}}
-						{{#if author.name.first}}by {{author.name.first}}{{/if}}
+						{{#if author.name.first}}by {{author.name.first}}{{/if}} 
+						{{#if publishedDate}}on {{publishedDate}}{{/if}}
 					</h5>
 				</header>
 				<div class="post">
