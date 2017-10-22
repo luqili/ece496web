@@ -1,3 +1,8 @@
+Handlebars.registerHelper('trimString', function(passedString) {
+    var theString = passedString.substring(0,15);
+    return new Handlebars.SafeString(theString)
+});
+
 <div class="container">
 	<h1>Update</h1>
 </div>
@@ -11,7 +16,7 @@
 					<h2><a href="{{postUrl slug}}">{{{title}}}</a></h2>
 					<p class="lead text-muted">{{{categoryList categories prefix="Posted in "}}}
 							{{#if author.name.first}}by {{author.name.first}}{{/if}}
-							{{#if publishedDate}}on {{publishedDate.substring(0,15)}}{{/if}}
+							{{#if publishedDate}}on {{{trimString publishedDate}}}{{/if}}
 					</p>
 					{{#if image}}<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img pull-right">{{/if}}
 					<p>{{{content.brief}}}</p>
